@@ -1,8 +1,15 @@
 import {Text, TouchableOpacity, StyleSheet} from "react-native"
 
-export default function BigButton({text, navigation, nextScreen}) {
+function navigate(navigation, nextScreen){
+    if (nextScreen==null){
+        return 
+    }
+    navigation.navigate(nextScreen)
+}
+
+export default function BigButton({text, navigation, nextScreen, onPress}) {
     return (
-        <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate(nextScreen)}}>
+        <TouchableOpacity style={styles.button} onPress={()=>{if (onPress) {onPress()}; navigate(navigation, nextScreen)}}>
             <Text style={styles.buttonText}>{text}</Text>
         </TouchableOpacity>
     );
