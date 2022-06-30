@@ -1,7 +1,7 @@
 import {Text, SafeAreaView, TextInput, StyleSheet} from 'react-native'
 import {useState} from 'react'
 import {LinearGradient} from 'expo-linear-gradient';
-import BigButton from "../components/BigButton"
+import NavButton from "../components/NavButton"
 import {ip} from "../env"
 
 async function sendRequestToCreateTeam(team_name, setTeamCreated) {
@@ -31,11 +31,14 @@ export default function CreateTeam ({navigation}) {
         <LinearGradient colors={['#f22213', '#f57e07']} style={{flex: 1}}>
             <SafeAreaView style={styles.container}>
                 <Text style={styles.header}>Team Name</Text>
-                <TextInput value={text} onChangeText={onChangeText} style={styles.input}/>
+                <TextInput value={text} onChangeText={onChangeText} style={styles.input} disabled={!teamCreated}/>
                 { !teamCreated ?
-                <BigButton text={"Submit"} navigation={navigation} nextScreen={null} onPress={async ()=>{setResText(await sendRequestToCreateTeam(text, setTeamCreated))}}/> : null
+                <NavButton text={"Submit"} navigation={navigation} nextScreen={null} onPress={async ()=>{setResText(await sendRequestToCreateTeam(text, setTeamCreated))}}/> : null
                 }
                 <Text style={styles.errortext}>{resText}</Text>
+                { teamCreated ?
+                <NavButton text={"Next"} navigation={navigation} nextScreen={"TeamPage"} context={{team_name: text, team_code: resText.slice(-8)}}/> : null
+                }
             </SafeAreaView>
         </LinearGradient>
     )

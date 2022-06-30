@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
-import BigButton from "../components/BigButton"
+import NavButton from "../components/NavButton"
 
 export default function Home({navigation}) {
     return (
         <LinearGradient colors={['#f22213', '#f57e07']} style={{flex: 1}}>
             <SafeAreaView style={styles.container}>
                     <Text style={styles.header}>Debate Manager</Text>
-                    <BigButton text={"Create team"} navigation={navigation} nextScreen={"CreateTeam"}/>
+                    <NavButton text={"Create team"} navigation={navigation} nextScreen={"CreateTeam"}/>
             </SafeAreaView>
         </LinearGradient>
 

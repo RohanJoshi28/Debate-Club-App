@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from "./screens/Home"
 import CreateTeam from "./screens/CreateTeam"
+import TeamPage from "./screens/TeamPage"
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,10 @@ export default function App() {
               <Stack.Screen
                 name="CreateTeam"
                 component={CreateTeam}
+              />
+              <Stack.Screen
+                name="TeamPage"
+                component={TeamPage}
               />
             </Stack.Navigator>
           </NavigationContainer>
