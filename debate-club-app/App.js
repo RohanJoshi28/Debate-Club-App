@@ -1,10 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from "./screens/Home"
 import CreateTeam from "./screens/CreateTeam"
 import TeamPage from "./screens/TeamPage"
+import TeamView from "./screens/TeamView"
+import EnterCode from "./screens/EnterCode"
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,14 @@ export default function App() {
               <Stack.Screen
                 name="TeamPage"
                 component={TeamPage}
+              />
+              <Stack.Screen
+                name="TeamView"
+                component={TeamView}
+              />
+              <Stack.Screen
+                name="EnterCode"
+                component={EnterCode}
               />
             </Stack.Navigator>
           </NavigationContainer>
