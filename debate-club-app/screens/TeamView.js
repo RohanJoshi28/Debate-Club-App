@@ -5,7 +5,7 @@ import {LinearGradient} from 'expo-linear-gradient'
 import {useState} from 'react'
 import {ip} from "../env"
 
-async function getImage(team_code, setImage) {
+async function getImage(team_codee, setImage) {
     const response = await fetch(`http://${ip.IP_ADDRESS}:8000/viewimage`, {
         method: 'POST',
         headers: {
