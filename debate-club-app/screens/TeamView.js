@@ -3,10 +3,10 @@ import Header from "../components/Header"
 import ZoomImage from "../components/ZoomImage"
 import {LinearGradient} from 'expo-linear-gradient'
 import {useState} from 'react'
-import {ip} from "../env"
+import {url} from "../env"
 
-async function getImage(team_codee, setImage) {
-    const response = await fetch(`http://${ip.IP_ADDRESS}:8000/viewimage`, {
+async function getImage(team_code, setImage) {
+    const response = await fetch(`${url.url}/viewimage`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',

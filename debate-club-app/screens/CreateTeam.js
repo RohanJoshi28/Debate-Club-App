@@ -4,10 +4,10 @@ import {LinearGradient} from 'expo-linear-gradient';
 import TextField from '../components/TextField'
 import NavButton from "../components/NavButton"
 import ErrorText from "../components/ErrorText"
-import {ip} from "../env"
+import {url} from "../env"
 
 async function sendRequestToCreateTeam(team_name, setTeamCreated) {
-    const response = await fetch(`http://${ip.IP_ADDRESS}:8000/createteam`, {
+    const response = await fetch(`${url.url}/createteam`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',

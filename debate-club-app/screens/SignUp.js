@@ -5,7 +5,7 @@ import TextField from "../components/TextField";
 import ErrorText from '../components/ErrorText';
 import Header from "../components/Header"
 import Button from '../components/Button';
-import {ip} from "../env"
+import {url} from "../env"
 
 async function createUser (userfirst, userlast, email, navigation, setError) {
     if (userfirst.length < 2 || userlast.length < 2){
@@ -13,7 +13,7 @@ async function createUser (userfirst, userlast, email, navigation, setError) {
         return;
     }
 
-    const response = await fetch(`http://${ip.IP_ADDRESS}:8000/createuser`, {
+    const response = await fetch(`${url.url}/createuser`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',

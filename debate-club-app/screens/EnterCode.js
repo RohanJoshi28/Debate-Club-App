@@ -5,10 +5,10 @@ import ErrorText from "../components/ErrorText"
 import {SafeAreaView, StyleSheet} from 'react-native'
 import {LinearGradient} from 'expo-linear-gradient'
 import {useState} from 'react'
-import {ip} from "../env"
+import {url} from "../env"
 
 async function onPress (team_code, navigation) {
-    const response = await fetch(`http://${ip.IP_ADDRESS}:8000/teamname`, {
+    const response = await fetch(`${url.url}/teamname`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -22,7 +22,6 @@ async function onPress (team_code, navigation) {
         navigation.navigate("EnterCode", {errorMsg: "Team code was not found"})
     } else if (response.status==500) {
         navigation.navigate("EnterCode", {errorMsg: "Team code must be a number"})
-        console.log("HELLO")
     } else {
         navigation.navigate("TeamView", {team_code: team_code})
     }

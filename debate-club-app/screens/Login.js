@@ -5,12 +5,12 @@ import Header from "../components/Header"
 import GoogleButton from "../components/GoogleButton"
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
-import {ip} from "../env"
+import {url} from "../env"
 
 WebBrowser.maybeCompleteAuthSession();
 
 async function navigateEmail(navigation, email){
-    let userFoundResponse = await fetch(`http://${ip.IP_ADDRESS}:8000/getuser`, {
+    let userFoundResponse = await fetch(`${url.url}/getuser`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
