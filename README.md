@@ -94,4 +94,4 @@ Then, run “yarn expo start --tunnel” to start the app! Always remember the -
 
 The QR code is what you need to show the app on your iPhone. Open the camera app and scan the QR code, which will automatically show a button to open up the expo app.
 
-![QR code when running expo start on github repo](./assets/readme_assets/scan_qr_code.png)
+<img src="./assets/readme_assets/scan_qr_code.png" alt="QR code when running expo start on github repo" width=30>
