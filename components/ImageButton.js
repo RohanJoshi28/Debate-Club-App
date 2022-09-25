@@ -1,10 +1,10 @@
 import * as ImagePicker from "expo-image-picker";
 import Button from "./Button";
-import {ip} from "../env";
+import {url} from "../env";
 import * as ImageManipulator from "expo-image-manipulator";
 
 async function sendRequestToSetImage(team_code, base64_image) {
-    const response = await fetch(`http://${ip.IP_ADDRESS}:8000/setimage`, {
+    const response = await fetch(`${url.url}/setimage`, {
         method: "POST",
         headers: {
             Accept: "application/json",
